@@ -1,0 +1,42 @@
+--- a/va/va_trace.c
++++ b/va/va_trace.c
+@@ -1491,10 +1491,6 @@ static void va_TraceMPEG2Buf(
+         break;
+     case VAEncSliceParameterBufferType:
+         break;
+-    case VAEncH264VUIBufferType:
+-        break;
+-    case VAEncH264SEIBufferType:
+-        break;
+     default:
+         break;
+     }
+@@ -1767,10 +1763,6 @@ static void va_TraceMPEG4Buf(
+     case VAEncSliceParameterBufferType:
+         va_TraceVAEncSliceParameterBuffer(dpy, context, buffer, type, size, 
+num_elements, pbuf);
+         break;
+-    case VAEncH264VUIBufferType:
+-        break;
+-    case VAEncH264SEIBufferType:
+-        break;
+     default:
+         break;
+     }
+@@ -1835,12 +1827,6 @@ static void va_TraceH264Buf(
+     case VAEncSliceParameterBufferType:
+         va_TraceVAEncSliceParameterBuffer(dpy, context, buffer, type, size, 
+num_elements, pbuf);
+         break;
+-    case VAEncH264VUIBufferType:
+-        va_TraceVABuffers(dpy, context, buffer, type, size, num_elements, 
+pbuf);
+-        break;
+-    case VAEncH264SEIBufferType:
+-        va_TraceVABuffers(dpy, context, buffer, type, size, num_elements, 
+pbuf);
+-        break;
+     case VAEncMiscParameterBufferType:
+         va_TraceVAEncMiscParameterBuffer(dpy, context, buffer, type, size, 
+num_elements, pbuf);
+         break;
